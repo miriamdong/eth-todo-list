@@ -123,6 +123,16 @@ App = {
     window.location.reload()
   },
 
+  toggleCompleted: async (e) => {
+    let accounts = await web3.eth.getAccounts();
+    web3.eth.defaultAccount = accounts[0]
+    App.setLoading(true)
+    const taskId = e.target.name
+    console.log(taskId);
+    await App.todoList.toggleCompleted(taskId,{ from:  web3.eth.defaultAccount
+    } )
+    window.location.reload()
+  },
 
   setLoading: (boolean) => {
     App.loading = boolean
