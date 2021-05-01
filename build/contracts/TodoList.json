@@ -1,0 +1,392 @@
+{
+  "contractName": "TodoList",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "taskCount",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function",
+      "signature": "0xb6cb58a5"
+    }
+  ],
+  "bytecode": "0x608060405260008055348015601357600080fd5b506098806100226000396000f3fe6080604052600436106039576000357c010000000000000000000000000000000000000000000000000000000090048063b6cb58a514603e575b600080fd5b348015604957600080fd5b5060506066565b6040518082815260200191505060405180910390f35b6000548156fea165627a7a72305820d696fb57e3f5e7a3994752ed2c12b4dd84cafb81c755ac6fa8b63f0dacb9314f0029",
+  "deployedBytecode": "0x6080604052600436106039576000357c010000000000000000000000000000000000000000000000000000000090048063b6cb58a514603e575b600080fd5b348015604957600080fd5b5060506066565b6040518082815260200191505060405180910390f35b6000548156fea165627a7a72305820d696fb57e3f5e7a3994752ed2c12b4dd84cafb81c755ac6fa8b63f0dacb9314f0029",
+  "sourceMap": "25:124:1:-;;;70:1;46:25;;25:124;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:124:1;;;;;;;",
+  "deployedSourceMap": "25:124:1:-;;;;;;;;;;;;;;;;;;;;;;46:25;;8:9:-1;5:2;;;30:1;27;20:12;5:2;46:25:1;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.5.0;\n\ncontract TodoList {\n\nuint public taskCount = 0;\n\nstruct Task {\n    uint id;\n    string content;\n    bool completed;\n  }\n\n\n\n}",
+  "sourcePath": "/Users/miriamdong/lighthouse/eth-todo-list/contracts/TodoList.sol",
+  "ast": {
+    "absolutePath": "/Users/miriamdong/lighthouse/eth-todo-list/contracts/TodoList.sol",
+    "exportedSymbols": {
+      "TodoList": [
+        45
+      ]
+    },
+    "id": 46,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 34,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 45,
+        "linearizedBaseContracts": [
+          45
+        ],
+        "name": "TodoList",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 37,
+            "name": "taskCount",
+            "nodeType": "VariableDeclaration",
+            "scope": 45,
+            "src": "46:25:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 35,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "46:4:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "30",
+              "id": 36,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "70:1:1",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "TodoList.Task",
+            "id": 44,
+            "members": [
+              {
+                "constant": false,
+                "id": 39,
+                "name": "id",
+                "nodeType": "VariableDeclaration",
+                "scope": 44,
+                "src": "92:7:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 38,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "92:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 41,
+                "name": "content",
+                "nodeType": "VariableDeclaration",
+                "scope": 44,
+                "src": "105:14:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 40,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "105:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 43,
+                "name": "completed",
+                "nodeType": "VariableDeclaration",
+                "scope": 44,
+                "src": "125:14:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 42,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "125:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Task",
+            "nodeType": "StructDefinition",
+            "scope": 45,
+            "src": "74:70:1",
+            "visibility": "public"
+          }
+        ],
+        "scope": 46,
+        "src": "25:124:1"
+      }
+    ],
+    "src": "0:149:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/miriamdong/lighthouse/eth-todo-list/contracts/TodoList.sol",
+    "exportedSymbols": {
+      "TodoList": [
+        45
+      ]
+    },
+    "id": 46,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 34,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 45,
+        "linearizedBaseContracts": [
+          45
+        ],
+        "name": "TodoList",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 37,
+            "name": "taskCount",
+            "nodeType": "VariableDeclaration",
+            "scope": 45,
+            "src": "46:25:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 35,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "46:4:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "30",
+              "id": 36,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "70:1:1",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "TodoList.Task",
+            "id": 44,
+            "members": [
+              {
+                "constant": false,
+                "id": 39,
+                "name": "id",
+                "nodeType": "VariableDeclaration",
+                "scope": 44,
+                "src": "92:7:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 38,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "92:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 41,
+                "name": "content",
+                "nodeType": "VariableDeclaration",
+                "scope": 44,
+                "src": "105:14:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 40,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "105:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 43,
+                "name": "completed",
+                "nodeType": "VariableDeclaration",
+                "scope": 44,
+                "src": "125:14:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 42,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "125:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Task",
+            "nodeType": "StructDefinition",
+            "scope": 45,
+            "src": "74:70:1",
+            "visibility": "public"
+          }
+        ],
+        "scope": 46,
+        "src": "25:124:1"
+      }
+    ],
+    "src": "0:149:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.1+commit.c8a2cb62.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0xd906d06617840dA32bEd20B179ca51972640E7ee",
+      "transactionHash": "0x6ec0398ba8b39642c28df87d773915b650d75bbec6e2e1e335a6823f245724a8"
+    }
+  },
+  "schemaVersion": "3.0.1",
+  "updatedAt": "2021-05-01T18:00:20.872Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
