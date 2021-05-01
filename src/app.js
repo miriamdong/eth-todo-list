@@ -48,18 +48,14 @@ App = {
 
  loadAccount: async () => {
     // Set the current blockchain account
-
-   web3.eth.getAccounts().then(function(result){
-     App.account = result[0];
-     console.log(App.account);
-   })
+    App.account = web3.eth.getAccounts().then(function(result){
+     return result[0];
+    });
    console.log(App.account);
   },
 
   loadContract: async () => {
   // var contract = required("truffle-contract");
-
-
     // Create a JavaScript version of the smart contract
     const todoList = await $.getJSON('TodoList.json')
     console.log(todoList)
@@ -86,25 +82,25 @@ App = {
     // Update loading state
     App.setLoading(false)
   },
-renderTasks: async () => {
-    // Load the total task count from the blockchain
+   renderTasks: async () => {
+    //1. Load the total task count from the blockchain
     const taskCount = await App.todoList.taskCount()
     const $taskTemplate = $('.taskTemplate')
 
-    // Render out each task with a new task template
-    for (var i = 1; i <= taskCount; i++) {
-      // Fetch the task data from the blockchain
+    //2. Render out each task with a new task template
+    for (let i = 1; i <= taskCount; i++) {
+    // Fetch the task data from the blockchain
       const task = await App.todoList.tasks(i)
       const taskId = task[0].toNumber()
       const taskContent = task[1]
       const taskCompleted = task[2]
-      // Create the html for the task
+    // Create the html for the task
       const $newTaskTemplate = $taskTemplate.clone()
       $newTaskTemplate.find('.content').html(taskContent)
       $newTaskTemplate.find('input')
                       .prop('name', taskId)
                       .prop('checked', taskCompleted)
-                      // .on('click', App.toggleCompleted)
+                      .on('click', App.toggleCompleted)
 
       // Put the task in the correct list
       if (taskCompleted) {
@@ -112,11 +108,23 @@ renderTasks: async () => {
       } else {
         $('#taskList').append($newTaskTemplate)
       }
-      // Show the task
+      //3.Show the task
       $newTaskTemplate.show()
     }
   },
-setLoading: (boolean) => {
+
+  createTask: async () => {
+    let accounts = await web3.eth.getAccounts();
+    web3.eth.defaultAccount = accounts[0]
+    App.setLoading(true)
+    const content = $('#newTask').val()
+    await App.todoList.createTask(content,  { from:  web3.eth.defaultAccount
+    })
+    window.location.reload()
+  },
+
+
+  setLoading: (boolean) => {
     App.loading = boolean
     const loader = $('#loader')
     const content = $('#content')
@@ -128,13 +136,10 @@ setLoading: (boolean) => {
       content.show()
     }
   }
-
 };
 
 $(() => {
   $(window).load(() => {
-
     App.load()
   })
-
   })
