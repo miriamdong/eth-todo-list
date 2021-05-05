@@ -48,8 +48,8 @@ App = {
 
  loadAccount: async () => {
     // Set the current blockchain account
-    App.account = web3.eth.getAccounts().then(function(result){
-     return result[0];
+ App.account = web3.eth.getAccounts().then(function(result){
+  return result[0];
     });
    console.log(App.account);
   },

@@ -8,11 +8,12 @@ MetaMask is a bridge that allows you to visit the distributed web of tomorrow in
 
 - Localhost:3000
 
-cd eth-todo-list/
+<pre><code>cd eth-todo-list/
 npx truffle compile
 npx truffle migrate
 npm run dev
 truffle console to test
+</code></pre>
 
 
 ## Final Product
